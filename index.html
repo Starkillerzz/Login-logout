@@ -12,14 +12,39 @@
     </style>
 </head>
 <body>
-    <h1>Cadastro de pessoas</h1>
+    <h1>Seja Bem Vindo!</h1>
     <hr>
-    <div class="cadastro">
-        <label>Insira o seu nome:</label>
-        <input type="text"></input><br>
-        <label>Insira o seu sobrenome:</label>
-        <input type="text"></input><br>
+    <nav>
+        <a id="home" href="home.html" target="centro">Home</a>
+        <a id="clientes" href="Consulta de clientes.html" target="centro">Consultar Clientes</a>
+        <a id="produtos" href="consulta de produtos.html" target="centro">Consultar Produtos</a>
+        <label id="usuariologado"></label>
+        <button id="login">
+            <a id="escondelogin" class="botaologin" href="login.html">Login</a>
+        </button>
+        <button id="logout" onclick="logout()">Logout</button>
+    </nav>
+    <iframe src="Consulta de clientes.html" name="centro"></iframe>
+    <script>
+        var usuario = localStorage.getItem("login")
+        document.getElementById("usuariologado").innerHTML  = usuario
 
-    </div>
+            if(localStorage.getItem("login") != null){
+                document.getElementById("logout").style = "display: block"
+                document.getElementById("login").style = "display: none"
+            }else{
+                document.getElementById("login").style = "display: block"
+                document.getElementById("logout").style = "display: none"
+                document.getElementById("clientes").style = "display: none"
+                document.getElementById("produtos").style = "display: none"
+
+
+            }
+        
+
+        function logout(){
+            localStorage.removeItem("login")
+        }
+    </script>
 </body>
 </html>

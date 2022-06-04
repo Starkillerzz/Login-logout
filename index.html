@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        iframe{
+            width: 100%;
+            height: 800px;
+        }
         h1{
             text-align: center;
         }
@@ -12,7 +16,7 @@
     </style>
 </head>
 <body>
-    <h1>Seja Bem Vindo!</h1>
+    <h1>Consultas</h1>
     <hr>
     <nav>
         <a id="home" href="home.html" target="centro">Home</a>
@@ -24,7 +28,7 @@
         </button>
         <button id="logout" onclick="logout()">Logout</button>
     </nav>
-    <iframe src="Consulta de clientes.html" name="centro"></iframe>
+    <iframe src="home.html" name="centro"></iframe>
     <script>
         var usuario = localStorage.getItem("login")
         document.getElementById("usuariologado").innerHTML  = usuario
